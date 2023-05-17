@@ -1,7 +1,21 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from '../assets/logo.jfif'
+import { AuthContext } from "../provider/AuthProvider";
 
 const Header = () => {
+    const { user, logout } = useContext(AuthContext)
+
+    const handleLogout = () => {
+        logout()
+            .then(() => {
+                // Sign-out successful.
+            }).catch((error) => {
+                // An error happened.
+                console.log(error)
+            });
+
+    }
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -25,18 +39,21 @@ const Header = () => {
                     <div className="flex gap-6">
                         <Link to="/">Home</Link>
                         <Link>All Toys</Link>
-                        <Link to="/login">Login</Link>
-                        {/* {
-                            user && <p>{user.email}</p>
+                        {
+                            user && <Link to='' >Add Toys</Link>
                         }
                         {
-                            user && <Link to='/checkout/bookings' > My Bookings </Link>
-                        } */}
+                            user && <Link to='' >My Toys</Link>
+                        }
+                        <Link>Blog</Link>
                     </div>
                 </ul>
             </div>
             <div className="navbar-end">
-                <button  >LogOut</button>
+                {
+                    user && <img src={user?.photoURL} alt="" />
+                }
+                { user ?  <button onClick={handleLogout} >LogOut</button> :  <Link to='/login'><button>login</button></Link>}
             </div>
         </div>
     );
