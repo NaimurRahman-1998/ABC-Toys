@@ -5,7 +5,7 @@ import Header from "../Components/Header";
 
 const LoginLayout = () => {
     return (
-        <div>
+        <div className="mx-48">
             <Header></Header>
             <Outlet></Outlet>
             <Footer></Footer>

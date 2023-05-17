@@ -1,9 +1,12 @@
+import Banner from "../../Components/Banner";
+import GallerySection from "./GallerySection";
 
 
 const Home = () => {
     return (
         <div>
-            this is home
+            <Banner></Banner>
+            <GallerySection></GallerySection>
         </div>
     );
 };

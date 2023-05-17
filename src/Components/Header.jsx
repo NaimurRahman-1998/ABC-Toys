@@ -51,7 +51,7 @@ const Header = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user && <img src={user?.photoURL} alt="" />
+                    user && <img className="rounded-full" src={user?.photoURL} alt="" />
                 }
                 { user ?  <button onClick={handleLogout} >LogOut</button> :  <Link to='/login'><button>login</button></Link>}
             </div>
