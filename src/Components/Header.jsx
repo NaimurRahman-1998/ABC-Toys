@@ -38,9 +38,9 @@ const Header = () => {
                 <ul className="menu menu-horizontal px-">
                     <div className="flex gap-6">
                         <Link to="/">Home</Link>
-                        <Link>All Toys</Link>
+                        <Link to='/toys/allToys'>All Toys</Link>
                         {
-                            user && <Link to='' >Add Toys</Link>
+                            user && <Link to='/toys/addToys' >Add Toys</Link>
                         }
                         {
                             user && <Link to='' >My Toys</Link>

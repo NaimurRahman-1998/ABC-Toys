@@ -1,13 +1,15 @@
 /* eslint-disable no-unused-vars */
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from '../../assets/Login/login.png'
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
 
     const { login } = useContext(AuthContext)
-
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/';
     const handleLogin = (event) => {
         event.preventDefault()
         const form = event.target;
@@ -20,6 +22,7 @@ const Login = () => {
                 // Signed in 
                 const user = userCredential.user;
                 console.log(user)
+                navigate(from)
             })
             .catch((error) => {
                 const errorCode = error.code;

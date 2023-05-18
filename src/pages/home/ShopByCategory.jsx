@@ -23,13 +23,14 @@ const ShopByCategory = () => {
             <h1 className="text-3xl font-extrabold text-center text-red-500">Shop By Category</h1>
 
             <Tabs>
-                <TabList>
+                <TabList className='flex justify-center'>
                     {
                         category.map(doll => <Tab key={doll.id}>{doll.title}</Tab>)
                     }
 
                 </TabList>
 
+                <div className='flex justify-center mt-6'>
                 {
                     category.map(doll =>
                         <TabPanel>
@@ -84,65 +85,8 @@ const ShopByCategory = () => {
                             </div>
                         </TabPanel>)
                 }
-
-                {/* <TabPanel>
-                    <div className='flex gap-8'>
-                        <div className='flex'>
-                            <div className='relative'>
-                                <img className='w-[20rem] h-[20rem]'  alt="" />
-                                <div className='bg-black rounded-xl duration-200 opacity-20 text-white  absolute inset-x-0 bottom-0 hover:opacity-80'>
-                                    <div className='flex justify-between items-center px-5'>
-                                        <div>
-                                            <h1 className='font-bold text-xl'>Amazing Spider Man</h1>
-                                            <p>price : $99.99</p>
-                                            <Rating
-                                                name="simple-controlled"
-                                                value={value}
-                                                onChange={(event, newValue) => {
-                                                    setValue(newValue);
-                                                }}
-                                            />
-                                        </div>
-                                        <div>
-                                            <Link> <button className='btn'>View Details</button></Link>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div className='flex'>
-                            <div className='relative'>
-                                <img className='w-[20rem] h-[20rem]'  alt="" />
-                                <div className='bg-black rounded-xl opacity-20 text-white duration-200  absolute inset-x-0 bottom-0 hover:opacity-80'>
-                                    <div className='flex justify-between items-center px-5'>
-                                        <div>
-                                            <h1 className='font-bold text-xl'>Captain Marvel</h1>
-                                            <p>price : $99.99</p>
-                                            <Rating
-                                                name="simple-controlled"
-                                                value={value}
-                                                onChange={(event, newValue) => {
-                                                    setValue(newValue);
-                                                }}
-                                            />
-                                        </div>
-                                        <div>
-                                            <button className='btn'>View Details</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-
-
-                </TabPanel> */}
+                </div>
+                
 
 
             </Tabs>
