@@ -1,20 +1,11 @@
-import img1 from '../assets/Banner/1.jpg'
+import img1 from '../assets/Banner/banner.jpg'
 
 
 const Banner = () => {
     return (
         <div>
             <div className="carousel h-[30rem] w-full">
-                <div id="slide1" className="carousel-item relative w-full">
-                    <img src={img1} className="w-full" />
-                    <div className='bg-gradient-to-r from-[#151515] to-rgba(21, 21, 21, 0) text-white w-[80%] h-full  absolute space-y-6 pt-16 pl-10 '>
-                        <h1 className='font-bold text-6xl '>Best Action <br /> Figures Are  <br /> Near You</h1>
-                        <p>Welcome to our enchanting toy web page, where imagination comes to life! <br /> Discover a captivating collection of toys that <br /> inspire creativity, joy, and endless fun for children of all ages.</p>
-                        <button className="btn btn-error">DIscover More</button> <button className="btn btn-outline btn-error">Latest Project</button>
-                    </div>
-
-                </div>
-
+            <img src={img1} alt="" />
             </div>
 
             <div className='text-center mt-10'>

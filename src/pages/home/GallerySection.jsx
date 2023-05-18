@@ -7,7 +7,7 @@ import img6 from '../../assets/Gallery/6.jpg'
 
 const GallerySection = () => {
     return (
-        <div className="mt-14">
+        <div className="mt-14 ">
             <h1 className="text-red-500 text-4xl text-center font-bold">Our Collections</h1>
 
             <div className='grid grid-cols-3 gap-4 mt-5 '>

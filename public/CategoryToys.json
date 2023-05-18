@@ -1,0 +1,67 @@
+[
+    {   
+        
+        "title" : "marvel",
+        "details": [
+            {
+                "id": 1,
+                "name": "SpiderMan",
+                "category": "marvel",
+                "price": "$19.99",
+                "image": "https://i.ibb.co/7Nk2Td4/1.jpg",
+                "description": "A cuddly stuffed bear with soft fur, perfect for hugging and snuggling."
+            },
+            {
+                "id": 2,
+                "name": "Captain Marvel",
+                "category": "marvel",
+                "price": "$59.99",
+                "image": "https://i.ibb.co/SyxSYVK/2.jpg",
+                "description": "Build and protect LEGO City with this police station set. Catch the robbers and keep the city safe!"
+            }
+        ]
+    },
+    {
+        "title" : "dc",
+        "details": [
+            {
+                "id": 3,
+                "name": "Superman",
+                "category": "dc",
+                "price": "$19.99",
+                "image": "https://i.ibb.co/vQWGjVy/3.jpg",
+                "description": "A cuddly stuffed bear with soft fur, perfect for hugging and snuggling."
+            },
+            {
+                "id": 4,
+                "name": "Flash",
+                "category": "dc",
+                "price": "$59.99",
+                "image": "https://i.ibb.co/VpwxsbM/4.jpg",
+                "description": "Build and protect LEGO City with this police station set. Catch the robbers and keep the city safe!"
+            }
+        ]
+    },
+    {
+        "title" : "barbie",
+        "details": [
+            {
+                "id": 5,
+                "name": "Fashionista Doll",
+                "category": "barbie",
+                "price": "$19.99",
+                "image": "https://i.ibb.co/Nrm1Bg5/5.jpg",
+                "description": "A cuddly stuffed bear with soft fur, perfect for hugging and snuggling."
+            },
+            {
+                "id": 6,
+                "name": "Princess Doll",
+                "category": "barbie",
+                "price": "$59.99",
+                "image": "https://i.ibb.co/HxFQxNV/6.webp",
+                "description": "Build and protect LEGO City with this police station set. Catch the robbers and keep the city safe!"
+            }
+        ]
+    }
+    
+]
