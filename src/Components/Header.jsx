@@ -43,7 +43,7 @@ const Header = () => {
                             user && <Link to='/toys/addToys' >Add Toys</Link>
                         }
                         {
-                            user && <Link to='' >My Toys</Link>
+                            user && <Link to='/toys/myToys' >My Toys</Link>
                         }
                         <Link>Blog</Link>
                     </div>

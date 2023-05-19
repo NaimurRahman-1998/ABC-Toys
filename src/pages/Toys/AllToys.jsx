@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useContext, useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 
@@ -59,7 +59,7 @@ const AllToys = () => {
                                     <td>{toy.SubCategory}</td>
                                     <td>${toy.price}</td>
                                     <td>{toy.quantity} piece</td>
-                                    <td> <button className="btn">View Details</button> </td>
+                                    <td> <Link to={`/toys/${toy._id}`}><button className="btn">View Details</button></Link> </td>
                                 </tr>
                             )
                         }
