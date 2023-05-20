@@ -23,7 +23,7 @@ const GallerySection = () => {
                     </div>
                 </div> </div>
 
-                <div data-aos="fade-up" data-aos-duration="700"> <div className='w-[20rem] h-[20rem] relative hover:-translate-y-2 duration-300 rounded-xl'>
+                <div data-aos="fade-down" data-aos-duration="700"> <div className='w-[20rem] h-[20rem] relative hover:-translate-y-2 duration-300 rounded-xl'>
                     <img className='object-cover h-full rounded-2xl' src={img2} alt="" />
                     <div className='bg-gradient-to-b from-zinc-500 to-purple-500 rounded-2xl text-white absolute inset-0 opacity-0 hover:opacity-70 '>
                         <h1 className='text-center mt-40 font-extrabold text-2xl'>DC Action Figures</h1>
@@ -45,7 +45,7 @@ const GallerySection = () => {
                 </div>
                 </div>
 
-                <div data-aos="fade-down" data-aos-duration="700"> <div className='w-[20rem] h-[20rem] relative hover:-translate-y-2 duration-300 rounded-xl'>
+                <div data-aos="fade-up" data-aos-duration="700"> <div className='w-[20rem] h-[20rem] relative hover:-translate-y-2 duration-300 rounded-xl'>
                     <img className='object-cover h-full rounded-2xl' src={img5} alt="" />
                     <div className='bg-gradient-to-b from-white to-orange-500 rounded-2xl text-white absolute inset-0 opacity-0 hover:opacity-70 '>
                         <h1 className='text-center mt-40 font-extrabold text-2xl'>Naruto Action Figures</h1>

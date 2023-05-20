@@ -39,7 +39,7 @@ const Login = () => {
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
-                        <h1 className="text-3xl text-center font-bold">Login</h1>
+                        <h1 className="text-3xl text-center font-bold">Please Login</h1>
                         <form onSubmit={() => handleLogin(event)}>
                             <div className="form-control">
                                 <label className="label">
@@ -58,10 +58,10 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn btn-primary" type="submit" value="Login" />
+                                <input className="btn-red" type="submit" value="Login" />
                             </div>
                         </form>
-                        <p className='my-4 text-center'>New to Car Doctors <Link className='text-orange-600 font-bold' to="/signup">Sign Up</Link> </p>
+                        <p className='my-4 text-center'>New to ABC Toys <Link className='text-red-400 font-bold' to="/signup">Sign Up</Link> </p>
 
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import LoginLayout from "../layout/LoginLayout";
 import ToysLayout from "../layout/ToysLayout";
+import ErrorElement from "../pages/ErrorElement";
 import DollsDetails from "../pages/home/DollsDetails";
 import Home from "../pages/home/Home";
 import Login from "../pages/SignUpLogin/Login";
@@ -16,14 +17,16 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <LoginLayout></LoginLayout>,
+        errorElement: <ErrorElement></ErrorElement>,
         children: [
             {
                 path: '/',
                 element: <Home></Home>
             },
             {
-                path: '/details/:id',
-                element: <DollsDetails></DollsDetails>
+                path: '/dollDetails/:id',
+                element: <PrivateRoute><DollsDetails></DollsDetails></PrivateRoute>,
+                loader: ({params})=> fetch(`http://localhost:5000/categoryDolls/${params.id}`)
             },
             {
                 path: '/login',
@@ -38,6 +41,7 @@ const router = createBrowserRouter([
     {
         path: '/toys',
         element: <ToysLayout></ToysLayout> ,
+        errorElement: <ErrorElement></ErrorElement>,
         children: [
             {
                 path: '/toys/:id',

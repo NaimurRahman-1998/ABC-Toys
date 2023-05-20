@@ -95,7 +95,7 @@ const UpdateToys = () => {
                     </div>
                     <div className='flex justify-center'>
                         <div className="form-control mt-6 ">
-                            <input className="btn w-[10rem] btn-primary" type="submit" value="Update Your Toy" />
+                            <input className=" w-[10rem] btn-red" type="submit" value="Update Your Toy" />
                         </div>
                     </div>
                 </form>

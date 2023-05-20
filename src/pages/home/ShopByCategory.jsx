@@ -5,19 +5,34 @@ import 'react-tabs/style/react-tabs.css';
 import img1 from '../../assets/Category/1.jpg'
 import img2 from '../../assets/Category/2.jpg'
 import Rating from '@mui/material/Rating';
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './style.css'
+import { AuthContext } from '../../provider/AuthProvider';
 
 const ShopByCategory = () => {
     const [value, setValue] = useState(2);
     const [category, setCategory] = useState([])
+
+    const {user} = useContext(AuthContext)
+    const navigate = useNavigate()
     useEffect(() => {
         fetch('http://localhost:5000/categoryDolls')
             .then(res => res.json())
             .then(data => setCategory(data))
-    }, [])
-    console.log(category[0]?.details[0].name)
+    }, [user])
+    console.log(category[0]?._id)
+
+    const handleNavigate= (id)=> {
+        if(user){
+            navigate(`/dollDetails/${id}`)
+        }
+        else{
+            alert('You Have to Login To View Details')
+            navigate('/login')
+        }
+    }
+
     return (
         <div className="mt-28">
             <h1 className="fontTitle text-center font text-red-500 mb-4">Shop By Category</h1>
@@ -25,7 +40,7 @@ const ShopByCategory = () => {
             <Tabs>
                 <TabList className='flex gap-4 bg-red-500 h-10 font-bold justify-center'>
                     {
-                        category.map(doll => <Tab key={doll.id}>{doll.title}</Tab>)
+                        category.map(doll => <Tab key={doll._id}>{doll.title}</Tab>)
                     }
 
                 </TabList>
@@ -50,7 +65,7 @@ const ShopByCategory = () => {
                                                     />
                                                 </div>
                                                 <div>
-                                                    <Link to={`/dollDetails/${doll?.details[0]?.id}`}> <button className='btn'>View Details</button></Link>
+                                                    <button onClick={()=>handleNavigate(doll._id)} className='btn'>View Details</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -74,7 +89,7 @@ const ShopByCategory = () => {
                                                     />
                                                 </div>
                                                 <div>
-                                                    <Link to={`/dollDetails/${doll?.details[1]?.id}`}><button className='btn'>View Details</button></Link>
+                                                <button onClick={()=>handleNavigate(doll._id)} className='btn'>View Details</button>
                                                 </div>
                                             </div>
                                         </div>
