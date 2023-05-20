@@ -14,20 +14,20 @@ const ShopByCategory = () => {
     const [value, setValue] = useState(2);
     const [category, setCategory] = useState([])
 
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const navigate = useNavigate()
     useEffect(() => {
-        fetch('http://localhost:5000/categoryDolls')
+        fetch('https://abc-toys-server.vercel.app/categoryDolls')
             .then(res => res.json())
             .then(data => setCategory(data))
     }, [user])
     console.log(category[0]?._id)
 
-    const handleNavigate= (id)=> {
-        if(user){
+    const handleNavigate = (id) => {
+        if (user) {
             navigate(`/dollDetails/${id}`)
         }
-        else{
+        else {
             alert('You Have to Login To View Details')
             navigate('/login')
         }
@@ -46,62 +46,62 @@ const ShopByCategory = () => {
                 </TabList>
 
                 <div className='lg:flex flex justify-center mt-2'>
-                {
-                    category.map(doll =>
-                        <TabPanel>
-                            <div className='lg:flex gap-8'>
-                                <div className='flex'>
-                                    <div className='relative'>
-                                        <img className='w-[20rem] h-[20rem]' src={doll?.details[0]?.image} alt="" />
-                                        <div className='bg-black rounded-xl duration-200 opacity-20 text-white  absolute inset-x-0 bottom-0 hover:opacity-80'>
-                                            <div className='flex justify-between items-center px-5'>
-                                                <div>
-                                                    <h1 className='font-bold text-xl'>{doll?.details[0]?.name}</h1>
-                                                    <p>price :{doll?.details[0]?.price}</p>
-                                                    <Rating
-                                                        name="simple-controlled"
-                                                        value={value}
-                                                        
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <button onClick={()=>handleNavigate(doll._id)} className='btn'>View Details</button>
+                    {
+                        category.map(doll =>
+                            <TabPanel>
+                                <div className='lg:flex gap-8'>
+                                    <div className='flex'>
+                                        <div className='relative'>
+                                            <img className='w-[20rem] h-[20rem]' src={doll?.details[0]?.image} alt="" />
+                                            <div className='bg-black rounded-xl duration-200 opacity-20 text-white  absolute inset-x-0 bottom-0 hover:opacity-80'>
+                                                <div className='flex justify-between items-center px-5'>
+                                                    <div>
+                                                        <h1 className='font-bold text-xl'>{doll?.details[0]?.name}</h1>
+                                                        <p>price :{doll?.details[0]?.price}</p>
+                                                        <Rating
+                                                            name="simple-controlled"
+                                                            value={value}
+
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <button onClick={() => handleNavigate(doll._id)} className='btn'>View Details</button>
+                                                    </div>
                                                 </div>
                                             </div>
+
                                         </div>
 
                                     </div>
 
-                                </div>
+                                    <div className='flex'>
+                                        <div className='relative'>
+                                            <img className='w-[20rem] h-[20rem]' src={doll?.details[1]?.image} alt="" />
+                                            <div className='bg-black rounded-xl opacity-20 text-white duration-200  absolute inset-x-0 bottom-0 hover:opacity-80'>
+                                                <div className='flex justify-between items-center px-5'>
+                                                    <div>
+                                                        <h1 className='font-bold text-xl'>{doll?.details[1]?.name}</h1>
+                                                        <p>price : {doll?.details[1]?.price}</p>
+                                                        <Rating
+                                                            name="simple-controlled"
+                                                            value={value}
 
-                                <div className='flex'>
-                                    <div className='relative'>
-                                        <img className='w-[20rem] h-[20rem]' src={doll?.details[1]?.image} alt="" />
-                                        <div className='bg-black rounded-xl opacity-20 text-white duration-200  absolute inset-x-0 bottom-0 hover:opacity-80'>
-                                            <div className='flex justify-between items-center px-5'>
-                                                <div>
-                                                    <h1 className='font-bold text-xl'>{doll?.details[1]?.name}</h1>
-                                                    <p>price : {doll?.details[1]?.price}</p>
-                                                    <Rating
-                                                        name="simple-controlled"
-                                                        value={value}
-                                                        
-                                                    />
-                                                </div>
-                                                <div>
-                                                <button onClick={()=>handleNavigate(doll._id)} className='btn'>View Details</button>
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <button onClick={() => handleNavigate(doll._id)} className='btn'>View Details</button>
+                                                    </div>
                                                 </div>
                                             </div>
+
                                         </div>
 
                                     </div>
-
                                 </div>
-                            </div>
-                        </TabPanel>)
-                }
+                            </TabPanel>)
+                    }
                 </div>
-                
+
 
 
             </Tabs>

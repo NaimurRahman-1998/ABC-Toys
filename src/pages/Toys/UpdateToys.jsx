@@ -31,20 +31,20 @@ const UpdateToys = () => {
         console.log(data)
 
         const proceed = confirm('Are You Sure you want to Update?')
-        if(proceed){
-            fetch(`http://localhost:5000/allToys/${_id}` , {
-                method: 'PUT' ,
-                headers : {
-                    'Content-Type' : 'application/json'
+        if (proceed) {
+            fetch(`https://abc-toys-server.vercel.app/allToys/${_id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data)
             })
-            .then(res=>res.json())
-            .then(result=>{
-                if(result.modifiedCount>0){
-                    alert('Updated Successfully')
-                }
-            })
+                .then(res => res.json())
+                .then(result => {
+                    if (result.modifiedCount > 0) {
+                        alert('Updated Successfully')
+                    }
+                })
         }
     }
 

@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import LoginLayout from "../layout/LoginLayout";
 import ToysLayout from "../layout/ToysLayout";
+import Blog from "../pages/Blog";
 import ErrorElement from "../pages/ErrorElement";
 import DollsDetails from "../pages/home/DollsDetails";
 import Home from "../pages/home/Home";
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
             {
                 path: '/dollDetails/:id',
                 element: <PrivateRoute><DollsDetails></DollsDetails></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/categoryDolls/${params.id}`)
+                loader: ({ params }) => fetch(`https://abc-toys-server.vercel.app/categoryDolls/${params.id}`)
             },
             {
                 path: '/login',
@@ -35,18 +36,22 @@ const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <Signup></Signup>
+            },
+            {
+                path:'/blog',
+                element : <Blog></Blog>
             }
         ]
     },
     {
         path: '/toys',
-        element: <ToysLayout></ToysLayout> ,
+        element: <ToysLayout></ToysLayout>,
         errorElement: <ErrorElement></ErrorElement>,
         children: [
             {
                 path: '/toys/:id',
                 element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/toyDetails/${params.id}`)
+                loader: ({ params }) => fetch(`https://abc-toys-server.vercel.app/toyDetails/${params.id}`)
             },
             {
                 path: '/toys/addToys',
@@ -63,7 +68,7 @@ const router = createBrowserRouter([
             {
                 path: '/toys/updateToys/:id',
                 element: <UpdateToys></UpdateToys>,
-                loader: ({params})=> fetch(`http://localhost:5000/toyDetails/${params.id}`)
+                loader: ({ params }) => fetch(`https://abc-toys-server.vercel.app/toyDetails/${params.id}`)
             }
         ]
     }

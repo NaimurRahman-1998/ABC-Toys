@@ -5,20 +5,20 @@ import { AuthContext } from "../../provider/AuthProvider";
 
 
 const AllToys = () => {
-    const {user} = useContext(AuthContext)
-    const [toys,setToys] = useState([])
+    const { user } = useContext(AuthContext)
+    const [toys, setToys] = useState([])
     const [searchText, setSearchText] = useState('')
 
-    useEffect(()=>{
-        fetch('http://localhost:5000/allToys')
-        .then(res=>res.json())
-        .then(data=>setToys(data))
-    },[user])
+    useEffect(() => {
+        fetch('https://abc-toys-server.vercel.app/allToys')
+            .then(res => res.json())
+            .then(data => setToys(data))
+    }, [user])
 
-    const handleSearch=()=>{
-        fetch(`http://localhost:5000/allToysByName/${searchText}`)
-        .then(res=>res.json())
-        .then(data=>setToys(data))
+    const handleSearch = () => {
+        fetch(`https://abc-toys-server.vercel.app/allToysByName/${searchText}`)
+            .then(res => res.json())
+            .then(data => setToys(data))
     }
     return (
         <div className="">
