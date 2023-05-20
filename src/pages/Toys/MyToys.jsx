@@ -50,9 +50,6 @@ const MyToys = () => {
 
     return (
         <div className="">
-            Welcome to My Toys
-
-
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     {/* head */}
@@ -71,7 +68,7 @@ const MyToys = () => {
                         {
                             toys.map((toy) =>
                                 <tr key={toy._id}>
-                                    <td><button onClick={() => handleDelete(toy._id)} className="btn rounded-full">X</button></td>
+                                    <td><button onClick={() => handleDelete(toy._id)} className="bg-red-800 text-white rounded-full w-10 h-10 hover:bg-red-500">X</button></td>
                                     <td><img className="w-28 h-28 rounded-md" src={toy.toyUrl} alt="" /></td>
                                     <td>{toy.Name}</td>
                                     <td>{toy.SellerName}</td>

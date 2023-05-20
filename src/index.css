@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.f-title {
+    @apply text-black text-sm font-bold
+}
+.f-p{
+    @apply text-gray-500 text-xs
+}
+.btn-red{
+    @apply bg-red-500 rounded-full border-b-8 text-white hover:translate-y-2 hover:bg-red-600 duration-300 border-red-600 p-2
+}

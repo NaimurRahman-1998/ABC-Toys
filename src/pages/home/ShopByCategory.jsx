@@ -7,7 +7,7 @@ import img2 from '../../assets/Category/2.jpg'
 import Rating from '@mui/material/Rating';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import './style.css'
 
 const ShopByCategory = () => {
     const [value, setValue] = useState(2);
@@ -20,17 +20,17 @@ const ShopByCategory = () => {
     console.log(category[0]?.details[0].name)
     return (
         <div className="mt-28">
-            <h1 className="text-3xl font-extrabold text-center text-red-500">Shop By Category</h1>
+            <h1 className="fontTitle text-center font text-red-500 mb-4">Shop By Category</h1>
 
             <Tabs>
-                <TabList className='flex justify-center'>
+                <TabList className='flex gap-4 bg-red-500 h-10 font-bold justify-center'>
                     {
                         category.map(doll => <Tab key={doll.id}>{doll.title}</Tab>)
                     }
 
                 </TabList>
 
-                <div className='flex justify-center mt-6'>
+                <div className='flex justify-center mt-2'>
                 {
                     category.map(doll =>
                         <TabPanel>

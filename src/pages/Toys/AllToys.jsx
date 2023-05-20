@@ -22,22 +22,20 @@ const AllToys = () => {
     }
     return (
         <div className="">
-
-            Welcome to Bookings
             <div className="search-box p-2 text-center">
                 <input
                     onChange={(e) => setSearchText(e.target.value)}
                     type="text"
                     className="p-2 bg-slate-200"
-                    
+                    placeholder="Search By Toy Name"
                 />
-                <button className="bg-red-500 rounded-full border-b-8 text-white hover:translate-y-1 hover:bg-red-600 duration-300 border-red-600 p-3 ml-2" onClick={handleSearch}> Search</button>
+                <button className="btn-red ml-4" onClick={handleSearch}> Search</button>
             </div>
 
             <div className="overflow-x-auto">
-                <table className="table w-full">
+                <table className="table w-full ">
                     {/* head */}
-                    <thead>
+                    <thead >
                         <tr>
                             <th>#</th>
                             <th>Seller</th>

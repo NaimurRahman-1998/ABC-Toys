@@ -9,20 +9,20 @@ const AddToys = () => {
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = (data) => {
-        fetch('http://localhost:5000/allToys' , {
+        fetch('http://localhost:5000/allToys', {
             method: 'POST',
             headers: {
-                'Content-Type' : 'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
         })
-        .then(res=>res.json())
-        .then(result=>{
-            console.log(result)
-            if(result.insertedId){
-                alert('Submitted Toy Successfully')
-            }
-        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result)
+                if (result.insertedId) {
+                    alert('Submitted Toy Successfully')
+                }
+            })
         console.log(data);
     }
 
@@ -38,32 +38,30 @@ const AddToys = () => {
             <div className="bg-slate-200 h-[40rem] mt-11 py-10 px-36">
                 <h1 className="text-4xl font-bold text-center">Register Your Toys</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className='flex justify-between mt-5'>
+
+                    <div className='grid grid-cols-2 gap-10 mt-6'>
                         <div>
                             <label className='text-2xl'>Toy Name : </label>
                             <input
-                                className="h-[2.5rem] w-[20rem] text-lg p-4 "
+                                className="h-[2.5rem] text-lg p-4 "
                                 {...register("Name", { required: true })}
                                 placeholder="Name"
-                                
+
                             />
                         </div>
                         <div>
                             <label className='text-2xl'>Toy Photo : </label>
                             <input
-                                className="h-[2.5rem] w-[20rem] text-lg p-4 "
+                                className="h-[2.5rem]  text-lg p-4 "
                                 {...register("toyUrl", { required: true })}
                                 placeholder="Url"
                                 defaultValue="url"
                             />
                         </div>
-                    </div>
-
-                    <div className='flex justify-between mt-5'>
                         <div>
                             <label className='text-2xl'>Seller Name : </label>
                             <input
-                                className="h-[2.5rem] w-[18rem] text-lg p-4 "
+                                className="h-[2.5rem]  text-lg p-4 "
                                 {...register("SellerName", { required: true })}
                                 placeholder={user && user.displayName}
                                 type="text"
@@ -72,7 +70,7 @@ const AddToys = () => {
                         <div>
                             <label className='text-2xl'>Seller Email : </label>
                             <input
-                                className="h-[2.5rem] w-[18rem] text-lg p-4 "
+                                className="h-[2.5rem]  text-lg p-4 "
                                 {...register("SellerEmail", { required: true })}
                                 placeholder={user && user.email}
                                 type="email"
@@ -80,6 +78,7 @@ const AddToys = () => {
                             />
                         </div>
                     </div>
+
 
                     <div className='flex justify-evenly mt-5'>
                         <div>
@@ -127,7 +126,7 @@ const AddToys = () => {
                     <div className='mt-6'>
                         <label className='text-2xl'>Description : </label>
                         <input
-                            className="h-[10rem] w-[30rem] text-lg p-4 "
+                            className="h-[10rem] w-full text-lg p-4 "
                             {...register("description")}
                             placeholder="description"
                         />
