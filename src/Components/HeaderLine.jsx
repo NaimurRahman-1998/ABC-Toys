@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
 
 const HeaderLine = () => {
     return (
-        <div className=" bg-red-600 h-8 w-full ">
+        <div className="lg:block hidden bg-red-600 h-8 w-full ">
             <div className="mx-48 text-white  flex ">
-                <div className='border-l flex border-gray-400 gap-4 p-2 border-r'>
+                <div className='border-l flex  border-gray-400 gap-4 p-2 border-r'>
                     <FaFacebook />
                     <FaInstagram />
                     <FaYoutubeSquare />
@@ -18,7 +18,7 @@ const HeaderLine = () => {
                 </div>
 
 
-                <div className='border-gray-400 p-1 border-r text-sm font-semibold flex-1'> <p>Call : 01975945863</p> </div>
+                <div className='border-gray-400 hidden lg:block p-1 border-r text-sm font-semibold flex-1'> <p>Call : 01975945863</p> </div>
 
 
 

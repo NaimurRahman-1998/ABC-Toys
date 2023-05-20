@@ -38,18 +38,18 @@ const ShopByCategory = () => {
             <h1 className="fontTitle text-center font text-red-500 mb-4">Shop By Category</h1>
 
             <Tabs>
-                <TabList className='flex gap-4 bg-red-500 h-10 font-bold justify-center'>
+                <TabList className='flex gap-4 bg-red-500 h-10 lg:w-full font-bold justify-center'>
                     {
                         category.map(doll => <Tab key={doll._id}>{doll.title}</Tab>)
                     }
 
                 </TabList>
 
-                <div className='flex justify-center mt-2'>
+                <div className='lg:flex flex justify-center mt-2'>
                 {
                     category.map(doll =>
                         <TabPanel>
-                            <div className='flex gap-8'>
+                            <div className='lg:flex gap-8'>
                                 <div className='flex'>
                                     <div className='relative'>
                                         <img className='w-[20rem] h-[20rem]' src={doll?.details[0]?.image} alt="" />

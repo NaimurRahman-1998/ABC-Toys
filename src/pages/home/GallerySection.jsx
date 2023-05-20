@@ -11,10 +11,10 @@ import './style.css'
 const GallerySection = () => {
     AOS.init();
     return (
-        <div className="mt-14 ">
+        <div className="mt-14 flex flex-col items-center">
             <h1 className="text-red-600 fontTitle text-center ">Our Collections</h1>
 
-            <div className='grid grid-cols-3 gap-4 mt-5 '>
+            <div className='lg:grid lg:grid-cols-3 gap-4 mt-5 '>
 
                 <div data-aos="fade-right" data-aos-duration="700"> <div className='w-[20rem] h-[20rem] relative hover:-translate-y-2 duration-300 rounded-xl'>
                     <img className='object-cover h-full rounded-2xl' src={img1} alt="" />

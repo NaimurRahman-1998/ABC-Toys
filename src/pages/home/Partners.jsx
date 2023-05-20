@@ -9,7 +9,7 @@ const Partners = () => {
         <div className="mt-16">
             <h1 className="fontTitle text-red-500 text-center">Retail Partners</h1>
 
-            <div className='flex mt-8 px-16 justify-between'>
+            <div className='lg:flex mt-8 px-16 justify-between'>
                 <img className='w-[9rem]' src={img1} alt="" />
                 <img className='w-[9rem]' src={img2} alt="" />
                 <img className='w-[9rem]' src={img3} alt="" />

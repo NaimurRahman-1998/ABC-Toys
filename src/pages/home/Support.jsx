@@ -4,7 +4,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 
 const Support = () => {
     return (
-        <div>
+        <div className="lg:block hidden">
             <div className="bg-red-600 h-[7rem] flex justify-between mt-32">
                 <div className="text-white flex items-center gap-5 border-zinc-100 border-r-2 mt-5 mb-4 flex-1 px-7 ">
                     <FaTruck className="w-[3rem] h-[3rem]" />

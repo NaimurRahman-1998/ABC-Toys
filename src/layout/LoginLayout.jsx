@@ -8,7 +8,7 @@ const LoginLayout = () => {
     return (
         <div>
             <HeaderLine></HeaderLine>
-            <div className="mx-48">
+            <div className="lg:mx-48">
                 <Header></Header>
                 <Outlet></Outlet>
                 <Footer></Footer>

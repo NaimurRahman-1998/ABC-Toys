@@ -54,7 +54,7 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <div className='border-t-2 py-4'>
+            <div className='border-t-2 lg:block hidden py-4'>
                 <span className='f-title'>Abc Toys</span> <span className='f-p'>@ 2023 All Right Reserved. Develop bu Stripling</span>
             </div>
         </div>
