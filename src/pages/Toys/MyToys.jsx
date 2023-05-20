@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useState } from "react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 
@@ -9,6 +10,8 @@ const MyToys = () => {
     const [toys, setToys] = useState([])
 
     const url = `http://localhost:5000/allToys?email=${user.email}`
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         fetch(url)
@@ -33,6 +36,15 @@ const MyToys = () => {
                 })
         }
 
+    }
+
+    const handleUpdate = (id) => {
+        const proceed = confirm ('Do you want to update Your Toys?')
+        if(proceed){
+            navigate(`/toys/updateToys/${id}`)
+        }else{
+            return
+        }
     }
 
 
@@ -64,7 +76,7 @@ const MyToys = () => {
                                     <td>{toy.Name}</td>
                                     <td>{toy.SellerName}</td>
                                     <td>${toy.price}</td>
-                                    <td><button className="btn">Update</button></td>
+                                    <td><button onClick={()=>handleUpdate(toy._id)} className="bg-red-500 rounded-full border-b-8 text-white hover:translate-y-2 hover:bg-red-600 duration-300 border-red-600 p-3">Update</button></td>
                                 </tr>
                             )
                         }

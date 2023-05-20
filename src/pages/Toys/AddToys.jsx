@@ -35,7 +35,7 @@ const AddToys = () => {
                     <h1 className="text-4xl text-white font-extrabold">Add Your Toys</h1>
                 </div>
             </div>
-            <div className="bg-slate-200 h-[40rem] mt-11 py-10 px-36 bg-[url('../../assets/Category/bg-image.jpg')]">
+            <div className="bg-slate-200 h-[40rem] mt-11 py-10 px-36">
                 <h1 className="text-4xl font-bold text-center">Register Your Toys</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className='flex justify-between mt-5'>
@@ -133,7 +133,7 @@ const AddToys = () => {
                         />
                     </div>
                     <div className='flex justify-center mt-5'>
-                        <input className="btn" value="Submit Your Toy" type="submit" />
+                        <input className="bg-red-500 rounded-full border-b-8 text-white hover:translate-y-2 hover:bg-red-600 duration-300 border-red-600 p-3" value="Submit Your Toy" type="submit" />
                     </div>
                 </form>
             </div>

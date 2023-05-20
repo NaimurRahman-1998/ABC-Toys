@@ -31,7 +31,7 @@ const AllToys = () => {
                     className="p-2 bg-slate-200"
                     
                 />
-                <button className="btn ml-2" onClick={handleSearch}> Search</button>
+                <button className="bg-red-500 rounded-full border-b-8 text-white hover:translate-y-1 hover:bg-red-600 duration-300 border-red-600 p-3 ml-2" onClick={handleSearch}> Search</button>
             </div>
 
             <div className="overflow-x-auto">
@@ -59,7 +59,7 @@ const AllToys = () => {
                                     <td>{toy.SubCategory}</td>
                                     <td>${toy.price}</td>
                                     <td>{toy.quantity} piece</td>
-                                    <td> <Link to={`/toys/${toy._id}`}><button className="btn">View Details</button></Link> </td>
+                                    <td> <Link to={`/toys/${toy._id}`}><button className="bg-red-500 rounded-full border-b-8 text-white hover:translate-y-2 hover:bg-red-600 duration-300 border-red-600 p-3">View Details</button></Link> </td>
                                 </tr>
                             )
                         }

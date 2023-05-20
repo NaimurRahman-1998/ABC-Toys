@@ -53,7 +53,7 @@ const Header = () => {
                 {
                     user && <img className="rounded-full" src={user?.photoURL} alt="" />
                 }
-                { user ?  <button onClick={handleLogout} >LogOut</button> :  <Link to='/login'><button>login</button></Link>}
+                { user ?  <button className="bg-red-500 rounded-full border-b-8 text-white hover:translate-y-2 hover:bg-red-600 duration-300 border-red-600 p-3" onClick={handleLogout} >LogOut</button> :  <Link to='/login'><button className="bg-red-500 rounded-full border-b-8 text-white hover:translate-y-2 hover:bg-red-600 duration-300 border-red-600 p-3">login</button></Link>}
             </div>
         </div>
     );
