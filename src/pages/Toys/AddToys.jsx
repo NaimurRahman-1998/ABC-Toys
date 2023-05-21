@@ -56,7 +56,7 @@ const AddToys = () => {
                             <input
                                 className="h-[2.5rem]  text-lg p-4 "
                                 {...register("toyUrl", { required: true })}
-                                placeholder="Url"
+                                placeholder="Type Url"
                                 defaultValue="url"
                             />
                         </div>
@@ -65,7 +65,7 @@ const AddToys = () => {
                             <input
                                 className="h-[2.5rem]  text-lg p-4 "
                                 {...register("SellerName", { required: true })}
-                                placeholder={user && user.displayName}
+                                value={user && user.displayName}
                                 type="text"
                             />
                         </div>
@@ -74,7 +74,7 @@ const AddToys = () => {
                             <input
                                 className="h-[2.5rem]  text-lg p-4 "
                                 {...register("SellerEmail", { required: true })}
-                                placeholder={user && user.email}
+                                value={user && user.email}
                                 type="email"
 
                             />
@@ -115,7 +115,7 @@ const AddToys = () => {
                             <label className='text-2xl'>Quantity : </label>
                             <input
                                 className="h-[2.5rem] w-[10rem] text-lg p-4 "
-                                {...register("quantity")}
+                                {...register("quantity" ,{ required: true }) }
                                 placeholder="Quantity"
                                 type="number"
                             />
@@ -129,7 +129,7 @@ const AddToys = () => {
                         <label className='text-2xl'>Description : </label>
                         <input
                             className="h-[10rem] w-full text-lg p-4 "
-                            {...register("description")}
+                            {...register("description" ,{ required: true })}
                             placeholder="description"
                         />
                     </div>

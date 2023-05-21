@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from '../../assets/Login/login.png'
 import { AuthContext } from "../../provider/AuthProvider";
@@ -8,6 +8,7 @@ import { FaGoogle } from "react-icons/fa";
 const Login = () => {
     TabTitle('ABC | Login')
     const { login, googleLogin } = useContext(AuthContext)
+    const [error,setError] = useState('')
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/';
@@ -28,7 +29,7 @@ const Login = () => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorMessage)
+                setError(errorMessage)
             });
     }
 
@@ -40,6 +41,7 @@ const Login = () => {
                 // Handle Errors here.
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                setError(errorMessage)
             });
     }
 
@@ -68,6 +70,7 @@ const Login = () => {
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
+                                {error && <p className='text-red-500'>{error}</p>}
                             </div>
                             <div className="form-control mt-6">
                                 <input className="btn-red" type="submit" value="Login" />

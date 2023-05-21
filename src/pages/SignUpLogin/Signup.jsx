@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { getAuth, updateProfile } from "firebase/auth";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import img from '../../assets/Login/login.png'
 import app from "../../firebase/firebase.config";
