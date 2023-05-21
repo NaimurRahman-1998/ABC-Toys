@@ -23,7 +23,7 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                console.log(user)
+                alert('Login Successful')
                 navigate(from)
             })
             .catch((error) => {

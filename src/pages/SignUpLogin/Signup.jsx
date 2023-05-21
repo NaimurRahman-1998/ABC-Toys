@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { getAuth, updateProfile } from "firebase/auth";
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import img from '../../assets/Login/login.png'
 import app from "../../firebase/firebase.config";
 import { AuthContext } from "../../provider/AuthProvider";
@@ -10,6 +10,7 @@ import { TabTitle } from "../../utilities/FunctionTitle";
 const auth = getAuth(app)
 const Signup = () => {
     const { createUser } = useContext(AuthContext)
+    const navigate = useNavigate()
     TabTitle('ABC | SignUp')
     const handleSignUp = (event) => {
         event.preventDefault()
@@ -24,9 +25,12 @@ const Signup = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
+                alert('User Created Successfully')
+                navigate('/login')
                 updateProfile(auth.currentUser, {
                     displayName: name, photoURL: photo
                 }).then(() => {
+                    
                     // Profile updated!
                     // ...
                 }).catch((error) => {
