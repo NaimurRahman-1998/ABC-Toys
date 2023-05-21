@@ -21,7 +21,6 @@ const ShopByCategory = () => {
             .then(res => res.json())
             .then(data => setCategory(data))
     }, [user])
-    console.log(category[0]?._id)
 
     const handleNavigate = (id) => {
         if (user) {
@@ -48,7 +47,7 @@ const ShopByCategory = () => {
                 <div className='lg:flex flex justify-center mt-2'>
                     {
                         category.map(doll =>
-                            <TabPanel>
+                            <TabPanel key={doll._id}>
                                 <div className='lg:flex gap-8'>
                                     <div className='flex'>
                                         <div className='relative'>

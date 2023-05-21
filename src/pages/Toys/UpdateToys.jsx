@@ -11,16 +11,15 @@ import {
     Button,
     Typography,
 } from "@material-tailwind/react";
-import { TabTitle } from '../../utilities/FunctionTitle';
 
 const UpdateToys = () => {
-    TabTitle('ABC | Update')
+
     const { user } = useContext(AuthContext);
 
     const loaderData = useLoaderData()
-    // console.log(loaderData[0])
-    const { Name, _id } = loaderData[0]
-
+    console.log(loaderData[0])
+    const { Name, _id , toyUrl } = loaderData[0]
+    // console.log(Name,_id,toyUrl)
     const handleUpdate = (event) => {
         event.preventDefault()
         const form = event.target;
@@ -80,6 +79,12 @@ const UpdateToys = () => {
                                 <span className="label-text text-xl">Price</span>
                             </label>
                             <input type="number" name='price' placeholder="Update Your Price" className="input w-[20rem] input-bordered" />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text text-xl">photo Url</span>
+                            </label>
+                            <input type="text" name='toyUrl' value={toyUrl} disabled className="input w-[20rem] input-bordered" />
                         </div>
                     </div>
                     <div className="form-control">

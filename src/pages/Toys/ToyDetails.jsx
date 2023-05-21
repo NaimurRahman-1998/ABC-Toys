@@ -11,7 +11,6 @@ const ToyDetails = () => {
     const { Name, toyUrl, SellerEmail, SellerName, SubCategory, description, price, quantity } = loaderData[0]
     return (
         <div>
-            welcome to toy details
             <div className="relative ">
                 <img className="w-full h-[23rem] rounded-2xl mx-auto" src={img} alt="" />
                 <div className="bg-gradient-to-r rounded-2xl from-[#151515] to-rgba(21, 21, 21, 0) w-full flex items-center inset-0 p-12 absolute  ">

@@ -1,5 +1,5 @@
 # Project Description
-# Note : if Data doesn't Shows,  Please Reload Page 5-6 Times for getting Data from Mongodb Backend .
+# Note : if Data doesn't Shows,  Please Reload both backend and client Page 5-6 Times for getting Data from Mongodb Backend .
 # Live Website Link : [https://all-in-one-be0e3.web.app](https://all-in-one-be0e3.web.app)
 # Vercel Backend Link : [https://abc-toys-server.vercel.app](https://abc-toys-server.vercel.app)
 ## Home Page 
