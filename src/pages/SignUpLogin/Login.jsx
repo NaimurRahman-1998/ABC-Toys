@@ -3,9 +3,10 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from '../../assets/Login/login.png'
 import { AuthContext } from "../../provider/AuthProvider";
+import { TabTitle } from "../../utilities/FunctionTitle";
 
 const Login = () => {
-
+    TabTitle('ABC | Login')
     const { login } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()

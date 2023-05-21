@@ -2,8 +2,10 @@
 import { useLoaderData } from "react-router-dom";
 import img from '../../assets/backgrond/background.jpg'
 import Rating from '@mui/material/Rating';
+import { TabTitle } from "../../utilities/FunctionTitle";
 
 const ToyDetails = () => {
+    TabTitle('ABC | Details')
     const loaderData = useLoaderData()
     console.log(loaderData[0])
     const { Name, toyUrl, SellerEmail, SellerName, SubCategory, description, price, quantity } = loaderData[0]

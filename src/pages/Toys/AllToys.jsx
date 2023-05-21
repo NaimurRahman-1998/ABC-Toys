@@ -2,9 +2,11 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { TabTitle } from "../../utilities/FunctionTitle";
 
 
 const AllToys = () => {
+    TabTitle( 'ABC | All-Toys')
     const { user } = useContext(AuthContext)
     const [toys, setToys] = useState([])
     const [searchText, setSearchText] = useState('')

@@ -51,7 +51,7 @@ const router = createBrowserRouter([
             {
                 path: '/toys/:id',
                 element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://abc-toys-server.vercel.app/toyDetails/${params.id}`)
+                loader: ({ params }) => fetch(`https://abc-toys-server.vercel.app/allToys/${params.id}`)
             },
             {
                 path: '/toys/addToys',
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
             {
                 path: '/toys/updateToys/:id',
                 element: <UpdateToys></UpdateToys>,
-                loader: ({ params }) => fetch(`https://abc-toys-server.vercel.app/toyDetails/${params.id}`)
+                loader: ({ params }) => fetch(`https://abc-toys-server.vercel.app/allToys/${params.id}`)
             }
         ]
     }

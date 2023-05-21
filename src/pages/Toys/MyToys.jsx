@@ -3,9 +3,11 @@ import { useContext, useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { TabTitle } from "../../utilities/FunctionTitle";
 
 
 const MyToys = () => {
+    TabTitle('ABC | My-Toys')
     const { user } = useContext(AuthContext)
     const [toys, setToys] = useState([])
     

@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 import img from '../../assets/Login/login.png'
 import app from "../../firebase/firebase.config";
 import { AuthContext } from "../../provider/AuthProvider";
+import { TabTitle } from "../../utilities/FunctionTitle";
 
 const auth = getAuth(app)
 const Signup = () => {
     const { createUser } = useContext(AuthContext)
+    TabTitle('ABC | SignUp')
     const handleSignUp = (event) => {
         event.preventDefault()
         const form = event.target;

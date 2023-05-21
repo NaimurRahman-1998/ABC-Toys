@@ -4,7 +4,9 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import img from '../../assets/Banner/1.jpg'
 import { AuthContext } from "../../provider/AuthProvider";
+import { TabTitle } from '../../utilities/FunctionTitle';
 const AddToys = () => {
+    TabTitle('ABC | Add-Toys')
     const { user } = useContext(AuthContext);
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();

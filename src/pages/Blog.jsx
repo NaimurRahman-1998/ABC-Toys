@@ -1,5 +1,7 @@
+import { TabTitle } from "../utilities/FunctionTitle";
 
 const Blog = () => {
+    TabTitle('ABC | Blog')
     return (
         <div>
             <div className="overflow-x-auto">

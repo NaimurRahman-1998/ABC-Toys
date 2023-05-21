@@ -1,9 +1,10 @@
 import { useLoaderData } from "react-router-dom";
+import { TabTitle } from "../../utilities/FunctionTitle";
 
 
 
 const DollsDetails = () => {
-
+    TabTitle('ABC | CategoryToys')
     const data = useLoaderData();
 
     return (
