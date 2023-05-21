@@ -104,18 +104,18 @@ const AddToys = () => {
                         </div>
                         <div>
                             <label className='text-2xl'>Rating</label>
-                            <select className="h-[2.5rem] w-[10rem] text-lg  " {...register("Rating", { required: true })}>
-                                <option value="2star">2star</option>
-                                <option value="3star">3star</option>
-                                <option value="4star">4star</option>
-                                <option value="5star">5star</option>
+                            <select className="h-[2.5rem] w-[10rem] text-lg  " {...register("rating", { required: true })}>
+                                <option value={2}>2star</option>
+                                <option value={3}>3star</option>
+                                <option value={4}>4star</option>
+                                <option value={5}>5star</option>
                             </select>
                         </div>
                         <div>
                             <label className='text-2xl'>Quantity : </label>
                             <input
                                 className="h-[2.5rem] w-[10rem] text-lg p-4 "
-                                {...register("quantity" ,{ required: true }) }
+                                {...register("quantity", { required: true })}
                                 placeholder="Quantity"
                                 type="number"
                             />
@@ -129,7 +129,7 @@ const AddToys = () => {
                         <label className='text-2xl'>Description : </label>
                         <input
                             className="h-[10rem] w-full text-lg p-4 "
-                            {...register("description" ,{ required: true })}
+                            {...register("description", { required: true })}
                             placeholder="description"
                         />
                     </div>

@@ -37,6 +37,8 @@ const Login = () => {
         googleLogin()
             .then((result) => {
                 const user = result.user;
+                alert('Login Successful')
+                navigate(from)
             }).catch((error) => {
                 // Handle Errors here.
                 const errorCode = error.code;

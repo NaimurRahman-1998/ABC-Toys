@@ -62,7 +62,7 @@ const Header = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user && <img className="w-14 h-14 rounded-full" src={user?.photoURL} alt="" data-tooltip-id="my-tooltip"
+                        user && <img className="mr-5 w-14 h-14 rounded-full" src={user?.photoURL} alt="" data-tooltip-id="my-tooltip"
                                 data-tooltip-content={user.displayName} />
                     }
                     <Tooltip id="my-tooltip" />

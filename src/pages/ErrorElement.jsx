@@ -7,9 +7,9 @@ const ErrorElement = () => {
     const { error} = useRouteError()
     return (
         <div className="flex flex-col items-center justify-center">
-            <Lottie className="w-[40rem]" animationData={animation} loop={true} />
+            <Lottie className="w-[40rem] h-[35rem]" animationData={animation} loop={true} />
             <div>
-                <p className="text-red-500 text-xl">{error.message}</p>
+                <p className="text-red-500 text-xl">{error?.message}</p>
                 <Link to='/'><button className="btn-red">Back To Home Page</button></Link>
             </div>
         </div>

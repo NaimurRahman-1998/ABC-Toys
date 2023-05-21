@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+
 import { useLoaderData } from "react-router-dom";
 import img from '../../assets/backgrond/background.jpg'
 import Rating from '@mui/material/Rating';
@@ -7,8 +7,8 @@ import { TabTitle } from "../../utilities/FunctionTitle";
 const ToyDetails = () => {
     TabTitle('ABC | Details')
     const loaderData = useLoaderData()
-    console.log(loaderData[0])
-    const { Name, toyUrl, SellerEmail, SellerName, SubCategory, description, price, quantity } = loaderData[0]
+    console.log(loaderData[0]?.rating)
+    const { Name, toyUrl, SellerEmail, SellerName, SubCategory, description, price, quantity , rating } = loaderData[0]
     return (
         <div>
             <div className="relative ">
@@ -34,7 +34,7 @@ const ToyDetails = () => {
                             <h1 className="text-2xl">Sub Category : <span className="font-medium">{SubCategory}</span></h1>
                         </div>
                         <div className="flex justify-between mt-2">
-                            <h1 className="text-2xl"><Rating name="disabled" value={3} /></h1>
+                            <h1 className="text-2xl"><Rating name="disabled" value={parseInt(rating)} /></h1>
                             <h1 className="text-2xl mt-3">Available Quantity : <span className="font-medium">{quantity}</span></h1>
                         </div>
                         <p className="text-2xl mt-6">Description : {description}</p>
