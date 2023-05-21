@@ -16,12 +16,14 @@ const GallerySection = () => {
 
             <div className='lg:grid lg:grid-cols-3 gap-4 mt-5 '>
 
-                <div data-aos="fade-right" data-aos-duration="700"> <div className='w-[20rem] h-[20rem] relative hover:-translate-y-2 duration-300 rounded-xl'>
-                    <img className='object-cover h-full rounded-2xl' src={img1} alt="" />
-                    <div className='bg-gradient-to-b from-zinc-500 to-blue-500 rounded-2xl text-white absolute inset-0 opacity-0 hover:opacity-70 '>
+                <div data-aos="fade-right" data-aos-duration="700"> 
+                    <div className='w-[20rem] h-[20rem] relative hover:-translate-y-2 duration-300 rounded-xl'>
+                        <img className='object-cover h-full rounded-2xl' src={img1} alt="" />
+                        <div className='bg-gradient-to-b from-zinc-500 to-blue-500 rounded-2xl text-white absolute inset-0 opacity-0 hover:opacity-70 '>
                         <h1 className='text-center mt-40 font-extrabold text-2xl'>MARVEL Action Figures</h1>
-                    </div>
-                </div> </div>
+                        </div>
+                    </div> 
+                </div>
 
                 <div data-aos="fade-down" data-aos-duration="700"> <div className='w-[20rem] h-[20rem] relative hover:-translate-y-2 duration-300 rounded-xl'>
                     <img className='object-cover h-full rounded-2xl' src={img2} alt="" />

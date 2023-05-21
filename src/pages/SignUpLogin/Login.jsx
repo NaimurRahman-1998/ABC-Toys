@@ -4,10 +4,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from '../../assets/Login/login.png'
 import { AuthContext } from "../../provider/AuthProvider";
 import { TabTitle } from "../../utilities/FunctionTitle";
-
+import { FaGoogle } from "react-icons/fa";
 const Login = () => {
     TabTitle('ABC | Login')
-    const { login } = useContext(AuthContext)
+    const { login, googleLogin } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/';
@@ -29,6 +29,17 @@ const Login = () => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorMessage)
+            });
+    }
+
+    const handleGoogle = () => {
+        googleLogin()
+            .then((result) => {
+                const user = result.user;
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
             });
     }
 
@@ -63,10 +74,13 @@ const Login = () => {
                             </div>
                         </form>
                         <p className='my-4 text-center'>New to ABC Toys <Link className='text-red-400 font-bold' to="/signup">Sign Up</Link> </p>
-
+                        <button onClick={handleGoogle} className="btn rounded-full bg-blue-500 w-12"><FaGoogle></FaGoogle></button>
                     </div>
+
                 </div>
+
             </div>
+
         </div>
     );
 };
